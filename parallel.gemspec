@@ -9,4 +9,6 @@ Gem::Specification.new name, Parallel::VERSION do |s|
   s.homepage = "http://github.com/grosser/#{name}"
   s.files = `git ls-files`.split("\n")
   s.license = "MIT"
+  
+  s.add_dependency 'win32-process' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
 end

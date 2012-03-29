@@ -1,6 +1,7 @@
 require 'thread' # to get Thread.exclusive
 require 'rbconfig'
 require 'parallel/version'
+require 'win32-process' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
 
 module Parallel
   def self.in_threads(options={:count => 2})
